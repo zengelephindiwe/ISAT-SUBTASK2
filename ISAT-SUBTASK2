@@ -88,3 +88,24 @@ void demo() {
     cout << "Binary: " << decimalToBinary(randomNum) << endl;
 }
 
+int main() {
+    int choice;
+    do {
+        cout << "\n--- Number Conversion Menu ---\n";
+        cout << "1. Decimal to Binary\n";
+        cout << "2. Binary to Decimal\n";
+        cout << "3. Decimal to Hexadecimal\n";
+        cout << "4. Hexadecimal to Decimal\n";
+        cout << "5. Demo (Random Number to Binary)\n";
+        cout << "6. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            int decimal;
+            cout << "Enter decimal number: ";
+            cin >> decimal;
+            cout << "Binary: " << decimalToBinary(decimal) << endl;
+        }
+      
+
