@@ -29,3 +29,62 @@ int binaryToDecimal(string binary) {
     }
     return decimal;
 }
+// Function 2: Binary to Decimal
+int binaryToDecimal(string binary) {
+    int decimal = 0;
+    int power = 0;
+    for (int i = binary.length() - 1; i >= 0; i--) {
+        if (binary[i] == '1') {
+            decimal += pow(2, power);
+        }
+        power++;
+    }
+    return decimal;
+}
+// Function 2: Binary to Decimal
+int binaryToDecimal(string binary) {
+    int decimal = 0;
+    int power = 0;
+    for (int i = binary.length() - 1; i >= 0; i--) {
+        if (binary[i] == '1') {
+            decimal += pow(2, power);
+        }
+        power++;
+    }
+    return decimal;
+}
+
+// Function 2: Binary to Decimal
+int binaryToDecimal(string binary) {
+    int decimal = 0;
+    int power = 0;
+    for (int i = binary.length() - 1; i >= 0; i--) {
+        if (binary[i] == '1') {
+            decimal += pow(2, power);
+        }
+        power++;
+    }
+    return decimal;
+}
+
+// Function 2: Binary to Decimal
+int binaryToDecimal(string binary) {
+    int decimal = 0;
+    int power = 0;
+    for (int i = binary.length() - 1; i >= 0; i--) {
+        if (binary[i] == '1') {
+            decimal += pow(2, power);
+        }
+        power++;
+    }
+    return decimal;
+}
+
+// Demo function
+void demo() {
+    srand(time(0)); // Seed random generator
+    int randomNum = rand() % 100; // between 0 and 99
+    cout << "Random number: " << randomNum << endl;
+    cout << "Binary: " << decimalToBinary(randomNum) << endl;
+}
+
