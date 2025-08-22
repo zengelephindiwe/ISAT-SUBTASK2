@@ -107,5 +107,38 @@ int main() {
             cin >> decimal;
             cout << "Binary: " << decimalToBinary(decimal) << endl;
         }
+
+ else if (choice == 2) {
+            string binary;
+            cout << "Enter binary number: ";
+            cin >> binary;
+            cout << "Decimal: " << binaryToDecimal(binary) << endl;
+        }
+        else if (choice == 3) {
+            int decimal;
+            cout << "Enter decimal number: ";
+            cin >> decimal;
+            cout << "Hexadecimal: " << decimalToHex(decimal) << endl;
+        }
+        else if (choice == 4) {
+            string hex;
+            cout << "Enter hexadecimal number: ";
+            cin >> hex;
+            cout << "Decimal: " << hexToDecimal(hex) << endl;
+        }
+        else if (choice == 5) {
+            demo();
+        }
+        else if (choice == 6) {
+            cout << "Exiting program..." << endl;
+        }
+        else {
+            cout << "Invalid choice! Try again." << endl;
+        }
+    } while (choice != 6);
+
+    return 0;
+}
+
       
 
