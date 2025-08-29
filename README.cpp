@@ -1,142 +1,65 @@
 #include <iostream>
 #include <string>
-#include <cmath>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
 
-// Function 1: Decimal to Binary
+// Function to convert decimal to binary
 string decimalToBinary(int decimal) {
-    if (decimal == 0) return "0";
+    if (decimal == 0) return "0"; // handle 0 case
     string binary = "";
-    while (decimal > 0) { 
+    while (decimal > 0) {
         binary = to_string(decimal % 2) + binary;
         decimal /= 2;
     }
-        return binary;  
+    return binary;
 }
 
-
-// Function 2: Binary to Decimal
+// Function to convert binary to decimal
 int binaryToDecimal(string binary) {
     int decimal = 0;
-    int power = 0;
-    for (int i = binary.length() - 1; i >= 0; i--) {
-        if (binary[i] == '1') {
-            decimal += pow(2, power);
+    for (char bit : binary) {
+        if (bit == '0' || bit == '1') {
+            decimal = decimal * 2 + (bit - '0');
+        } else {
+            // invalid character
+            return -1;
         }
-        power++;
     }
     return decimal;
-}
-// Function 2: Binary to Decimal
-int binaryToDecimal(string binary) {
-    int decimal = 0;
-    int power = 0;
-    for (int i = binary.length() - 1; i >= 0; i--) {
-        if (binary[i] == '1') {
-            decimal += pow(2, power);
-        }
-        power++;
-    }
-    return decimal;
-}
-// Function 2: Binary to Decimal
-int binaryToDecimal(string binary) {
-    int decimal = 0;
-    int power = 0;
-    for (int i = binary.length() - 1; i >= 0; i--) {
-        if (binary[i] == '1') {
-            decimal += pow(2, power);
-        }
-        power++;
-    }
-    return decimal;
-}
-
-// Function 2: Binary to Decimal
-int binaryToDecimal(string binary) {
-    int decimal = 0;
-    int power = 0;
-    for (int i = binary.length() - 1; i >= 0; i--) {
-        if (binary[i] == '1') {
-            decimal += pow(2, power);
-        }
-        power++;
-    }
-    return decimal;
-}
-
-// Function 2: Binary to Decimal
-int binaryToDecimal(string binary) {
-    int decimal = 0;
-    int power = 0;
-    for (int i = binary.length() - 1; i >= 0; i--) {
-        if (binary[i] == '1') {
-            decimal += pow(2, power);
-        }
-        power++;
-    }
-    return decimal;
-}
-
-// Demo function
-void demo() {
-    srand(time(0)); // Seed random generator
-    int randomNum = rand() % 100; // between 0 and 99
-    cout << "Random number: " << randomNum << endl;
-    cout << "Binary: " << decimalToBinary(randomNum) << endl;
 }
 
 int main() {
     int choice;
     do {
-        cout << "\n--- Number Conversion Menu ---\n";
+        cout << "\n=== Conversion Menu ===\n";
         cout << "1. Decimal to Binary\n";
         cout << "2. Binary to Decimal\n";
-        cout << "3. Decimal to Hexadecimal\n";
-        cout << "4. Hexadecimal to Decimal\n";
-        cout << "5. Demo (Random Number to Binary)\n";
-        cout << "6. Exit\n";
+        cout << "3. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
         if (choice == 1) {
             int decimal;
-            cout << "Enter decimal number: ";
+            cout << "Enter a decimal number: ";
             cin >> decimal;
-            cout << "Binary: " << decimalToBinary(decimal) << endl;
-        }
-
- else if (choice == 2) {
+            cout << "Binary representation: " << decimalToBinary(decimal) << endl;
+        } 
+        else if (choice == 2) {
             string binary;
-            cout << "Enter binary number: ";
+            cout << "Enter a binary number: ";
             cin >> binary;
-            cout << "Decimal: " << binaryToDecimal(binary) << endl;
+            int result = binaryToDecimal(binary);
+            if (result == -1) {
+                cout << "Invalid binary number! Please enter only 0s and 1s.\n";
+            } else {
+                cout << "Decimal representation: " << result << endl;
+            }
+        } 
+        else if (choice != 3) {
+            cout << "Invalid choice! Please try again.\n";
         }
-        else if (choice == 3) {
-            int decimal;
-            cout << "Enter decimal number: ";
-            cin >> decimal;
-            cout << "Hexadecimal: " << decimalToHex(decimal) << endl;
-        }
-        else if (choice == 4) {
-            string hex;
-            cout << "Enter hexadecimal number: ";
-            cin >> hex;
-            cout << "Decimal: " << hexToDecimal(hex) << endl;
-        }
-        else if (choice == 5) {
-            demo();
-        }
-        else if (choice == 6) {
-            cout << "Exiting program..." << endl;
-        }
-        else {
-            cout << "Invalid choice! Try again." << endl;
-        }
-    } while (choice != 6);
+    } while (choice != 3);
 
+    cout << "Program exited.\n";
     return 0;
 }
 
