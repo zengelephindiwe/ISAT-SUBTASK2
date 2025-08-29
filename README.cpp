@@ -1,20 +1,3 @@
-Your C++ program provides a menu-driven interface for converting decimal numbers to binary and vice versa. It demonstrates good use of functions and control structures. Here are a few suggestions to enhance the code:
-
-1. **Input Validation:**  
-   - Ensure that user inputs are valid integers for decimal conversions.
-   - For binary input, verify that the string contains only '0' and '1'.
-
-2. **Edge Cases:**  
-   - Handle negative decimal inputs if needed.
-   - Consider what happens with very large numbers and whether the program needs to handle them differently.
-
-3. **User Experience:**  
-   - Clearer prompts and instructions.
-   - Optionally, add the ability to convert multiple numbers without restarting the program.
-
-Here's a slightly improved version with some input validation:
-
-```cpp
 #include <iostream>
 #include <string>
 #include <limits>
